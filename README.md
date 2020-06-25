@@ -1,98 +1,85 @@
-
 Lors de la [https://perlconference.us/]("Conference in the cloud"),
 [Sawyer X](https://metacpan.org/search?q=XSAWYERX),
 (pumpkin)[https://perldoc.perl.org/perlhist.html#PUMPKIN%3f] actuel
 du langage [Perl](https://www.perl.org/] a annoncé que perl pasera
 en version 7 dans moins d'un an.
 
-C'est la première version majeure depuis le 17 octobre 1994 et pour
-ceux qui n'ont pas suivi l'évolution de Perl, Perl7 pourrait passer
-pour un non évenement puisque Sawyer X dit lui même que
-
 > Perl 7 is going to be Perl 5.32 with different settings
 
-Pour comprendre pourquoi cette nouvelle version était attendue
-(ou au contraire redoutée) et que, au passage 6 passe à l'as,
-il faut faire un tout petit peu d'histoire [1].
+C'est la première version majeure depuis le 17 octobre 1994 et pour
+ceux qui n'ont pas suivi l'évolution de ce langage, Perl7 pourrait
+passer pour un non-évenement. C'est au contraire un changement
+qui provoque à la fois la colère et l'antousiame.
 
-[1]: forcement un peu personelle: il y a eu énormement de
-choses marquantes durant ces 26 années et je met en avant
-ce que *je* pense être les grandes évolutions.
+Le développement de Perl (et son schema de versions) a été contraint
+par plusieurs réalités importantes.
 
+La réécriture de Perl par sa communauté (Perl 6) a commencé au tout
+début du millénaire pour aboutir à un langage dynamique dans lequel
+perl n'est plus qu'une source d'inspiration parmis tant d'autres.
+Un peu comme ruby qui se voulait être un "perl made right" s'appelle
+bien "ruby", les membres de la communauté Perl6 ont finalement
+rebaptisé leur création "raku" (#rakulang) en octobre 2019.
 
-2000: début de la spécification de perl6
-========================================
+Pendant ces longues années, une partie de la communauté Perl a
+continué à faire évoluer la version 5. 5.6.0 en mars 2000, 5.8.0 puis un long
+chantier de factorisation du code qui aboutira en décembre 2007: 5.10 est une
+version majeure: elle a facilité grandement la maintenance et l'intégration de
+nouveaux développeurs, elle était plus rapide et elle a introduit de nombreuses
+fonctionalités inspirée Perl6. Des lors, les p5p (perl5 porters, liste de
+diffusion sur laquelle se retrouve les développeurs de l'interpréteur perl)
+est capable de sortir une nouvelle version stable par an.
 
+Perl est très utilisé dans du code d'infrastructure (les autotools,
+texlive, git, les systèmes de paquets de debian et openbsd, ...), toutes ces
+nouvelles fonctionalités qui ont permis aux bonnes pratiques d'évoluer
+on du être ajoutées sans presque jamais casser la retrocompatibilité
+et ne pas introduire de collision avec le code des utilisateurs du langage.
+Ls dépreciations sont rares, ne concernent rien de central dans le langage
+et s'étalent sur plusieurs versions avec des warnings.
 
+Cela veut dire aussi qu'il faut ajouter de nouvelles fonctionalités avec précaution
+puisque ces fonctionalités devront être supportées ad vitam aeternam et peuvent
+rendre impossible des évolutions futures. Pour permettre de ménager la chèvre et le choux,
+d'évoluer sans casser, d'experimenter sans garantir, perl utilise des feature gards:
+des pragmas qui permettent d'activer et de désactiver finement toutes les nouvelles
+fonctionalités du langage.
 
-perl 5.10: le grand nettoyage
-=============================
+Pour ajouter à la richesse du langage, perl s'avère assez souple pour s'étendre en C ou en
+Perl. Ainsi il existe sur le [CPAN](https://search.cpan.org) plusieurs frameworks
+objet et c'est finalement [Moo](https://metacpan.org/pod/Moo) (inspiré du système OO de Perl6)
+qui s'est imposé. On trouve aussi des modules pour ajouter un système de signatures
+de fonctions ([Function::Parameters](https://metacpan.org/pod/Function::Parameters)),
+un système de typage
+([Type::Tiny](https://metacpan.org/pod/distribution/Type-Tiny/lib/Type/Tiny/Manual.pod)),
+un système permettant une approche fonctionnelle de la consommation des générateurs
+([Perlude](https://metacpan.org/pod/distribution/perlude/lib/Perlude.pod)) et j'en passe.
 
-de 1994 à
-
-
-    Sarathy  5.6.0         2000-Mar-22
-    Jarkko   5.8.0         2002-Jul-18
-    Rafael   5.10.0        2007-Dec-18
-
-
-* le développement ralentit progressivemnt
-
-perl 5.12: les plugable keywords
-================================
-
-L'aire Obra
-===========
-
-le pumpkin de 
-
-* modernisation du role de perl
-
-
-perl 5.16
-
-* perl 5.16 et les feature gards
-perl 5.20: les signatures experimentales
-========================================
-
-
-Sortir de l'echo chamber
-=======================
-
-* perl 5.20 signatures experimentales
-* perl7 et les problèmes de perl
-* perl8 et Cor?
-
-
-
-
-
-* Moose: le systeme objet qui met *presque* tout le monde d'accord
-* les pragmas
+Cette profusion est une chance pour le développeur Perl mais pour les nouveaux venus, le ticket
+d'entrée est d'autant plus cher que rien n'existe par défaut: il faut connaitre les bons pragmas,
+les bons modules et les bonnes pratiques sans qu'elles n'apparaissent immédiatement dans
+les tuto. De plus, le boilerplate s'allonge avec les années.
 
 
+C'est pour ces raisons que vous apparaitre des modules qui proposent à la fois un boilerplate,
+un bundle et un coding style. On peut citer [Modern::Perl](https://metacpan.org/pod/Modern::Perl),
+[Perl5i](https://metacpan.org/pod/perl5i), [common::sense](https://metacpan.org/release/common-sense), [Sympatic](https://metacpan.org/pod/Sympatic).
 
-* exemple: Sympatic
+        use Sympatic;
+        # Equivalent à:
+        # use strict;
+        # use warnings;
+        # use feature qw< unicode_strings say state >;
+        # use English qw< -no_match_vars >;
+        # use utf8;
+        # use Function::Parameters;
+        # use Moo;
+        # use MooX::LvalueAttribute;
 
+Si vous explorez ces modules, vous vous rendrez compte que le "sens commun"
+n'est pas le même pour tout le monde et que Perl
+[Lisp Curse](http://www.winestockwebdesign.com/Essays/Lisp_Curse.html). Il
+était temps de changer le fonctionnement par défaut de Perl et de proposer
+un nouveau standard. C'est chose faite avec Perl 7 et il vous est plus
+facile de comprendre la portée de l'annonce de Saywer X.
 
-*
-
-* perl6 est devenu raku
-
-(pumpkin)[https://perldoc.perl.org/perlhist.html#PUMPKIN%3f] actuel
-
-
- Larry   5.000          1994-Oct-17
-
-D'un coté, les personnes qui
-
-C'est un changement
-
-
-Votre titre
-===========
-
-Votre titre
------------
-
--
