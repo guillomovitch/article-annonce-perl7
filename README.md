@@ -77,9 +77,16 @@ un bundle et un coding style. On peut citer [Modern::Perl](https://metacpan.org/
         # use MooX::LvalueAttribute;
 
 Si vous explorez ces modules, vous vous rendrez compte que le "sens commun"
-n'est pas le même pour tout le monde et que Perl
-[Lisp Curse](http://www.winestockwebdesign.com/Essays/Lisp_Curse.html). Il
-était temps de changer le fonctionnement par défaut de Perl et de proposer
+n'est pas le même pour tout le monde et que Perl souffre de la
+[Lisp Curse](http://www.winestockwebdesign.com/Essays/Lisp_Curse.html).
+Il était temps de changer le fonctionnement par défaut de Perl et de proposer
 un nouveau standard. C'est chose faite avec Perl 7 et il vous est plus
 facile de comprendre la portée de l'annonce de Saywer X.
+
+Evidement, des dents vont grincer et des (disparition de la notation indirecte,
+de la syntaxe Perl4 des prototypes, ...) et une certaine inquiétude sur les
+conséquences imprévues d'un changement de version (lire
+"[Perl 7, not quite getting better yet](http://blogs.perl.org/users/leon_timmermans/2020/06/not-quite-getting-better-yet.html)") apparait mais il fallait que les choses évoluent
+et pour tout dire: Perl méritait un changement de version depuis bien longtemps.
+
 
