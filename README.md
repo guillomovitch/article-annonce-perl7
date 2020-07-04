@@ -1,7 +1,7 @@
 Lors de la [https://perlconference.us/]("Conference in the cloud"),
 [Sawyer X](https://metacpan.org/search?q=XSAWYERX),
 (pumpkin)[https://perldoc.perl.org/perlhist.html#PUMPKIN%3f] actuel
-du langage [Perl](https://www.perl.org/] a annoncé que perl pasera
+du langage [Perl](https://www.perl.org/] a annoncé que perl passera
 en version 7 dans moins d'un an.
 
 > Perl 7 is going to be Perl 5.32 with different settings
@@ -28,7 +28,7 @@ version majeure: elle a facilité grandement la maintenance et l'intégration de
 nouveaux développeurs, elle était plus rapide et elle a introduit de nombreuses
 fonctionalités inspirée Perl6. Des lors, les p5p (perl5 porters, liste de
 diffusion sur laquelle se retrouve les développeurs de l'interpréteur perl)
-est capable de sortir une nouvelle version stable par an.
+sont capables de sortir une nouvelle version stable par an.
 
 Perl est très utilisé dans du code d'infrastructure (les autotools,
 texlive, git, les systèmes de paquets de debian et openbsd, ...), toutes ces
@@ -83,8 +83,8 @@ Il était temps de changer le fonctionnement par défaut de Perl et de proposer
 un nouveau standard. C'est chose faite avec Perl 7 et il vous est plus
 facile de comprendre la portée de l'annonce de Saywer X.
 
-Evidement, des dents vont grincer et des (disparition de la notation indirecte,
-de la syntaxe Perl4 des prototypes, ...) et une certaine inquiétude sur les
+Evidement, des fonctionnalités vont évoluer (disparition de la notation indirecte,
+de la syntaxe Perl4 des prototypes, ...), des dents vont grincer et une certaine inquiétude sur les
 conséquences imprévues d'un changement de version (lire
 "[Perl 7, not quite getting better yet](http://blogs.perl.org/users/leon_timmermans/2020/06/not-quite-getting-better-yet.html)") apparait mais il fallait que les choses évoluent
 et pour tout dire: Perl méritait un changement de version depuis bien longtemps.
