@@ -83,7 +83,7 @@ Il était temps de changer le fonctionnement par défaut de Perl et de proposer
 un nouveau standard. C'est chose faite avec Perl 7 et il vous est plus
 facile de comprendre la portée de l'annonce de Saywer X.
 
-Evidement, des fonctionnalités vont évoluer (disparition de la notation indirecte,
+Evidement, des fonctionnalités vont évoluer (disparition de la notation objet indirecte,
 de la syntaxe Perl4 des prototypes, ...), des dents vont grincer et une certaine inquiétude sur les
 conséquences imprévues d'un changement de version (lire
 "[Perl 7, not quite getting better yet](http://blogs.perl.org/users/leon_timmermans/2020/06/not-quite-getting-better-yet.html)") apparait mais il fallait que les choses évoluent
